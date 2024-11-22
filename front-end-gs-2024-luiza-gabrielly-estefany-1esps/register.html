@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="./styles/register.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form">
+            <form action="#">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Cadastre-se</h1>
+                    </div>
+                </div>
+
+                <!-- Elementos do formulário -->
+                <div class="input-grup"> <!--Nome------------------------------------------------------------------------>
+                    <div class="input-box">
+                        <label for="primeiro-nome">Primeiro nome</label>
+                        <input id="primeiro-nome" type="text" name="primeiro-nome" placeholder="Digite seu nome" required>
+                    </div>
+                    <div class="input-box"> <!--Sobreome------------------------------------------------------------------>
+                        <label for="sobrenome">Sobrenome</label> 
+                        <input id="sobrenome" type="text" name="sobrenome" placeholder="Digite seu sobrenome" required>
+                    </div>
+                    <div class="input-box"> <!--Email--------------------------------------------------------------------->
+                        <label for="email">Email</label> 
+                        <input id="email" type="email" name="email" placeholder="Digite seu email" required>
+                    </div>
+                    <div class="input-box"> <!--Telefone------------------------------------------------------------------->
+                        <label for="telefone">Telefone</label> 
+                        <input id="telefone" type="tel" name="telefone" placeholder="(xx) xxxx-xxxx" required>
+                    </div>
+                    <div class="input-box"> <!--Senha---------------------------------------------------------------------->
+                        <label for="password">Senha</label> 
+                        <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
+                    </div>
+                    <div class="input-box"> <!--Confirmação---------------------------------------------------------------->
+                        <label for="confirm-password">Confirmação de senha</label> 
+                        <input id="confirm-password" type="password" name="confirm-password" placeholder="Confirme sua senha" required>
+                    </div>
+                </div>
+
+                <div class="generos-input">  <!--Genero--------------------------------------------------------------------->
+                    <div class="genero-titulo">
+                        <h2>Gênero:</h2>
+                    </div>
+
+                        <div class="genero-input">
+                            <input type="radio" id="female" name="genero">
+                            <label for="female">Feminino</label>
+                        </div>
+
+                        <div class="genero-input">
+                            <input type="radio" id="male" name="genero">
+                            <label for="male">Masculino</label>
+                        </div>
+
+                        <div class="genero-input">
+                            <input type="radio" id="others" name="genero">
+                            <label for="others">Outros</label>
+                        </div>
+                        
+                        <div class="genero-input">
+                            <input type="radio" id="none" name="genero">
+                            <label for="none">Prefiro não dizer</label>
+                        </div>
+                </div>
+
+                <div class="continue-button">
+                    <button class="continue-btn"> Continuar </button>
+                </div>
+            </form>
+
+            <script>
+                document.querySelector("form").addEventListener("submit", function(event) {
+                    
+                    event.preventDefault();
+            
+                    // Seleciona os elementos presentes no formulário----------------------------------------
+                    const primeiroNome = document.getElementById("primeiro-nome").value.trim();
+                    const sobrenome = document.getElementById("sobrenome").value.trim();
+                    const email = document.getElementById("email").value.trim();
+                    const telefone = document.getElementById("telefone").value.trim();
+                    const senha = document.getElementById("password").value.trim();
+                    const confirmSenha = document.getElementById("confirm-password").value.trim();
+                    const generoSelecionado = document.querySelector("input[name='genero']:checked");
+            
+                    // Validações----------------------------------------------------------------------------
+                    //Caso haja um ou mais campos em branco
+                    if (!primeiroNome || !sobrenome || !email || !telefone || !senha || !confirmSenha) {
+                        alert("Por favor, preencha todos os campos.");
+                        return;
+                    }
+            
+                    //Caso o campos genero não tenha cido selecionado---------------------------------------
+                    if (!generoSelecionado) {
+                        alert("Por favor, selecione seu gênero.");
+                        return;
+                    }
+            
+                    // Validação de email------------------------------------------------------------------
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        alert("Por favor, insira um email válido.");
+                        return;
+                    }
+            
+                    // Validação de telefone (simples)-----------------------------------------------------
+                    const telefoneRegex = /^\(\d{2}\) \d{4,5}-\d{4}$/;
+                    if (!telefoneRegex.test(telefone)) {
+                        alert("Por favor, insira um telefone válido");
+                        return;
+                    }
+            
+                    // Validação de senha------------------------------------------------------------------
+                    if (senha.length < 6) {
+                        alert("A senha deve ter pelo menos 6 caracteres.");
+                        return;
+                    }
+                   
+                    //Validação - confirmação de senha-----------------------------------------------------
+                    if (senha !== confirmSenha) {
+                        alert("As senhas não coincidem.");
+                        return;
+                    }
+            
+                    // Todos os campos preenchidos----------------------------------------------------------
+                    alert("Cadastro realizado com sucesso!");
+                    location.href = "index.html"; //!direcionamento para a pagina inicial
+                });
+            </script>
+            
+        </div>
+    </div>
+    
+</body>
+</html>

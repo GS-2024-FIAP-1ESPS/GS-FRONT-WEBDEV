@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./styles/login.css">
+
+</head>
+<body>
+    <main class="container">
+        <form>
+            <h1>Login</h1>
+            <div class="input-box"><!--Campo usuário---------------------------->
+                <input type="email" placeholder="Usuario" id="usuario"> 
+                <i class="bx bxs-user"></i> <!--Icone de usuario-->
+            </div>
+
+            <div class="input-box"><!--Campo senha------------------------------->
+                <input type="password" placeholder="Senha" id="senha">
+                <i class="bx bxs-lock-alt"></i> <!--Icone de senha-->
+            </div>
+
+            <div class="senha-lembrete"><!--Lembrete da senha-------------------->
+                <label> <!--Texto exibido-->
+                <input type="checkbox"> <!--Selecionar-->
+                Lembrar senha. 
+                </label>
+            </div>
+
+            <!--Butão de login ------------------------------------------------->
+            <button class="login" type="submit" onclick="logar()"; return false>Login</button>
+
+            <div class="registro"> <!--Direcionamento para o cadastro----------->
+                <p>Não tem uma conta? <a href="./register.html">Cadastre-se </a> </p>
+            </div>
+        </form>
+
+        <script> //Função da validação do usuário ------------------------------
+            function logar(){
+                event.preventDefault(); //envio do formulário
+                var login = document.getElementById('usuario').value
+                var senha = document.getElementById('senha').value
+
+                //Exemplo do usuario cadastrado--------------------------------
+                if(login === 'usuario1@gmail.com' && senha ==='12345'){
+                    alert('Login realizado com sucesso!');
+                    location.href = "register.html"; //!direcionamento para a pagina inicial
+                }else{
+                    alert('Usuário não registrado.'); 
+                }
+            }
+        </script>
+    </main>
+    
+</body>
+</html>

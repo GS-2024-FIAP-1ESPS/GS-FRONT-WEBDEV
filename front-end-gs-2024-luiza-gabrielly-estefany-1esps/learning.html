@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Aprendizados</title>
+</head>
+<body>
+<header> 
+  <nav class="navbar">
+      <div class="logo">
+        <a href="./index.html"><img src="../src/imgs/logo.png" alt="Imagem do Logo" class="logo-img"></a>
+      </div>
+      <ul class="nav-links">
+          <a href="./solution.html"><li>Solução</li></a> 
+          <a href="./greenenergy.html"><li>Green Energy</li></a>
+          <a href="./learning.html"><li>Aprendizados</li></a> 
+      </ul>
+      <a href="./login.html"> <button class="login"> Login </button> </a>
+      <a href="./cadastro.html"> <button class="register"> Cadastro </button> </a>
+  </nav>
+</header>
+<main>
+  <section class="video-section">
+    <div class="video-content">
+      <div class="video-description">
+        <h2 class="video-title">Assista ao vídeo</h2>
+        <p class="video-text">Basicamente, essa é a explicação da nossa solução em formato de pitch. Descubra como nosso projeto pode transformar ideias em soluções inovadoras, mostrando nossa visão, proposta de valor e os benefícios que ele pode oferecer!"</p>
+        <a href="#testimonials"><button class="btn-dark-green">Veja os cursos disponíveis</button></a>
+      </div>
+      <video src="../src/imgs/video_pitch.mov" alt="Vídeo Pitch do Projeto" class="video-player" controls autoplay muted></video>
+    </div>
+  </section>
+
+  <section class="cursos" id="testimonials">
+    <div class="swiper-container" id="titulo-principal"> 
+      <h1>Cursos</h1>
+      <h2>Está pronto para mudar o mundo? </h2>
+      <p>Conheça nossos cursos sobre energia renovável e impulsione a sustentabilidade em sua região.</p>
+    </div>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"> 
+            <img src="../src/imgs/energia-sustentavel.png" class="swiper-img" alt="Imagem de uma lâmpada com os tópicos de energia sustentável">
+            <h3 class="titulo-swiper">Energia Renovável na Prática</h3> 
+            <div class="testimonial-curso">
+                <div class="author-info">
+                    <p class="info-curso">
+                      Aprenda a instalar energia solar e eólica em comunidades, criando micro-redes para gerenciar a energia de forma sustentável e acessível. 
+                    </p>     
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide"> 
+          <img src="../src/imgs/conceito-de-energia-limpa.avif" class="swiper-img" alt="Imagem de uma pessoa segurando uma lâmpada">
+          <h3 class="titulo-swiper">Gestão Comunitária de Energia</h3> 
+          <div class="testimonial-curso">
+            <div class="author-info"> 
+                <p class="info-curso">
+                  Descubra como gerenciar projetos comunitários de energia renovável com foco em inclusão e sustentabilidade.
+                </p>     
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide"> 
+            <img src="../src/imgs/economia-circular.jpg" class="swiper-img" alt="Imagem de um ciclo da economia circular">
+            <h3 class="titulo-swiper">Economia Circular e Energia</h3>
+            <div class="testimonial-curso">
+              <div class="author-info">
+                <p class="info-curso">
+                  Entenda como integrar reciclagem e reutilização na cadeia de produção de energia renovável.
+                </p>     
+              </div>
+            </div>
+        </div>
+        <div class="swiper-slide"> 
+          <img src="../src/imgs/vetor-painel-solar.jpg" class="swiper-img" alt="Imagem vetorizada de uma casa com painel solar">
+          <h3 class="titulo-swiper">Armazenamento Compartilhado de Energia</h3> 
+          <div class="testimonial-curso">
+            <div class="author-info"> 
+              <p class="info-curso">
+                Explore soluções inovadoras para armazenar e compartilhar energia renovável entre residências e empresas.
+              </p>     
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide"> 
+          <img src="../src/imgs/painel-solar.webp" class="swiper-img" alt="Imagem do pôr do sol e uma casa com painel solar">
+          <h3 class="titulo-swiper">Soluções Renováveis para Áreas Isoladas</h3> 
+          <div class="testimonial-curso">
+            <div class="author-info"> 
+              <p class="info-curso">
+                Capacite-se a criar projetos de energia renovável em comunidades remotas e de difícil acesso.
+              </p>     
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide"> 
+          <img src="../src/imgs/conscientizacao.jpg" class="swiper-img" alt="Imagem de uma mão segurando um mundo">
+          <h3 class="titulo-swiper">Sustentabilidade Energética para Negócios e Comunidades</h3> 
+          <div class="testimonial-curso">
+            <div class="author-info"> 
+              <p class="info-curso">
+                Descubra como integrar práticas sustentáveis no consumo de energia em diferentes ambientes.
+              </p>     
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!--JS-->
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+    </div>
+</section>
+
+<!-- Biblioteca Swiper-->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script> 
+var swiper = new Swiper(".swiper", {
+    //Inicio do loop do carrossel-----------------------------------
+    loop: true, 
+    grabCursor: true, //Permite que passamos o carrossel de um para o outro ao selecionarmos
+    navigation: {
+        nextEl: ".swiper-button-next", //Botão "proximo"
+        prevEl: ".swiper-button-prev", //Botão "anterior"
+    },
+    pagination: { //permite a navegação dos elemento do HTMÇ
+        el: ".swiper-pagination",
+        clickable: true
+    },
+    breakpoints: { //responsividade 
+        640: { //Tipo de tela - 640px
+            slidesPerView: 1, //mostra uma aba por vez (curso)
+            spaceBetween: 18  //espaçamento
+        },
+        768: {//Tipo de tela - 768px
+            slidesPerView: 2, //mostra duas abas por vez (curso)
+            spaceBetween: 18  //espaçamento
+        },
+        1188: {//Tipo de tela - 1188px
+            slidesPerView: 3,//mostra tres abas por vez (curso)
+            spaceBetween: 24  //espaçamento
+        }
+    }
+});
+</script>
+<footer class="footer-container">
+  <div class="footer-content">
+    <div class="footer-top">
+      <nav class="footer-nav">
+        <h2 class="brand-title">Viva Verde</h2>
+        <ul class="nav-menu-footer">
+          <li><a href="./solution.html">Solução</a></li>
+          <li><a href="./greenenergy.html">Green Energy</a></li>
+          <li><a href="./learning.html">Aprendizados</a></li>
+        </ul>
+      </nav>
+      <div class="logo-container-footer">
+        <img loading="lazy" src="../src/imgs/logo.png" class="logo-footer" alt="Logo da solução Viva Verde" />
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Terms of Use & Privacy Policy</p>
+      <p>©2024 VivaVerde All Rights Reserved</p>
+    </div>
+  </div>
+</footer>
+</main>
+</body>
+</html>
